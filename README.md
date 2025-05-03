@@ -1,18 +1,30 @@
 # generative-ai-zero-to-hero (work in progress)
-Model : Models are simplified representations/mathematical representation of real-world phenomena, allowing for explanations and predictions. A program that can recognize patterns and make decisions or predictions without human intervention
-  
-Weight (parameter) : The variables that the model learns during training. They represent the strength or importance of different features or variables in a model's prediction process. It dictates how model behaves and what results it produces
 
-Features/Variables : Individual measurable property or characteristic of a data set. Represent characteristics or properties of the data. In a patient medical dataset, features could be age, gender, blood pressure, cholesterol level (https://domino.ai/data-science-dictionary/feature)
 
-House price = 6500 * Number of sq ft + 2500000 (Purpose : House Price Prediction)
+## ML (Machine Learning) Fundamentals
+- **Model** : Models are simplified representations/mathematical representation of real-world phenomena that enables explanations and can make predictions (it does so by identifying hidden patterns)
+- **Features/Variables** : Input to model. They represent characteristics or properties of the data, and can be measured. In a patient medical dataset, features of patient could be age, gender, blood pressure, cholesterol level (https://domino.ai/data-science-dictionary/feature)
+- **Weight(parameters)** : They represent the strength or importance of different features or variables in a model's prediction process. It dictates how model behaves and what results it produces
+- **Array** : Collection of numbers. Model weights are represented as array
+- **Vector** : 1 dimensional array (has magnitude and direction)
 
-Post Views = 0.4 * length of post + 2.1 * number of hashtags (Purpose : Social Media Post Popularity Prediction)
-
-Weekly grocery bill = 2300 * number of family members + 4500 (Purpose : Grocery bill estimation)
+### Exercise
+Consider the following models:
+1. House price = 6500 * Number of sq ft + 2500000 (Purpose : House Price Prediction) 
+2. Post Views = 0.4 * length of post + 2.1 * number of hashtags (Purpose : Social Media Post Popularity Prediction) 
+3. Weekly grocery bill = 2300 * number of family members + 4500 (Purpose : Grocery bill estimation)
 
 In the above models, what are the weights and what are the features/variables?
 
+Some more key terms
+- **Training** : The process of teaching a model to learn patterns and make predictions by exposing it to labeled data
+- **Target Variable** : The variable the model aims to predict. For example if we want to predict the house price from size of the house, the house price is target variable
+- **Independent variable** : The variables believed to influence/impact the target variable. For example if we want to predict the house price from size of the house, house size is an independent variable, as it impacts the house price.
+
+The model weights are learnt by the model from data during the training process. Refer the Linear Regression Jupyter notebook for a simple example. The essence is we have real world data of 10 houses, which includes their area in square feet and their price. Based on that data, the model identifies some pattern/relationship between house price and house size. Using that identified pattern, if we are given the size of a new house, we can make a rough estimate of the house price even without asking the house owner about the actual price
+
+
+## NLP (Natural Language Processing) Fundamentals
 
 
 In a neural network, weights are the learned traits that determine the strength of a connection (or signal) between any two of the neurons that make up the content of the network. (https://blog.metaphysic.ai/weights-in-machine-learning/)
@@ -21,7 +33,6 @@ In a neural network, weights are the learned traits that determine the strength 
 
 Parameter can include both model weights as well as hyperparameters
 
-Vector : Represented as a list of numbers (has magnitude and direction)
 
 
 Token : A basic unit of text (for a language model). Tokens can be whole words, parts of words, punctuation marks, or even individual characters
@@ -71,7 +82,6 @@ We can improve prompt using
 2. Cues : In this approach, we are giving the model a nudge in the right direction by starting it off with a snippet that reflects the desired response format.
 3. Template
 
-Training : The process of teaching a model to learn patterns and make predictions by exposing it to labeled data
 
 Training cutoff : Training cutoff refers to the date up to which the model's training data was collected and the model was trained (https://platform.openai.com/docs/models/o4-mini)
 
