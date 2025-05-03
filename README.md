@@ -21,36 +21,39 @@ Some more key terms
 - **Target Variable** : The variable the model aims to predict. For example if we want to predict the house price from size of the house, the house price is target variable
 - **Independent variable** : The variables believed to influence/impact the target variable. For example if we want to predict the house price from size of the house, house size is an independent variable, as it impacts the house price.
 
-The model weights are learnt by the model from data during the training process. Refer the Linear Regression Jupyter notebook for a simple example. The essence is we have real world data of 10 houses, which includes their area in square feet and their price. Based on that data, the model identifies some pattern/relationship between house price and house size. Using that identified pattern, if we are given the size of a new house, we can make a rough estimate of the house price even without asking the house owner about the actual price
+The model weights are learnt by the model from data during the training process. Refer the Linear Regression Jupyter notebook for a simple example. 
+
+#### Key Idea
+We have real world data of 10 houses, which includes their area in square feet and their price. Using that data, the model identifies some pattern/relationship between house price and house size. And using that identified pattern, if we are given the size of a new house, we can make a rough estimate of the house price (even without asking the house owner about the actual price)
 
 
 ## NLP (Natural Language Processing) Fundamentals
 
+NLP is a machine learning technology that gives computers the ability to interpret, manipulate, and comprehend human language. Some important terminologies in this field are:
 
-In a neural network, weights are the learned traits that determine the strength of a connection (or signal) between any two of the neurons that make up the content of the network. (https://blog.metaphysic.ai/weights-in-machine-learning/)
+- Structured : Data follows structure i.e. organized in the form of row and columns
+- Unstructured :  Data which does not follow a predefined structure eg. audio, video, text
+- Semi structured data : Data which follows some structure, but not as rigid as structured data i.e. does not have the complete structure to fit into rows and columns eg. json, yaml, xml
+- Language model : A machine learning model designed to understand human language
+- Token : A basic unit of text (for a language model). Tokens can be whole words, parts of words, punctuation marks, or even individual characters
+- Tokenization : The process of breaking down a large piece of text into smaller, more manageable units called tokens.  Visualize tokenization at https://platform.openai.com/tokenizer?WT.mc_id=academic-105485-koreyst
+
+With these basic terms covered, the next question that comes to mind is how does a model actually deal with textual data? The way this works is words are not fed directly to the model, instead there are converted to numbers, or more specifically vectors
+\
+\
+Representing text as vectors : There are 2 major ways to represent text as numbers
+1. Count based approach (eg. One hot encoding, Bag of words, tfidf)
+2. Embedding based approach (eg. word2vec, doc2vec, rnn)
+
+#### Count Based approach (to represent text as vectors)
 
 
-
-Parameter can include both model weights as well as hyperparameters
-
-
-
-Token : A basic unit of text (for a language model). Tokens can be whole words, parts of words, punctuation marks, or even individual characters
-
-Tokenization : The process of breaking down a piece of text into smaller, more manageable units called tokens. Visualize tokenization at https://platform.openai.com/tokenizer?WT.mc_id=academic-105485-koreyst
+### Exercise
+Given this sentence, create a one hot encoded vector and bag of words vector \
+`The dog chased the cat, and the cat chased the rat.`
 
 
-Representing text as vectors : Count based approach and Embedding based approach
-Food for thought : Why represent text as vectors? (https://eavelardev.github.io/gcp_courses/nlp_on_gcp/text_representation/one_hot_encoding_and_bag_of_words.html)
-
-Count based approach : One hot encoding, Bag of words, tfidf
-
-(https://www.kaggle.com/code/vipulgandhi/bag-of-words-model-for-beginners)
-
-Given this sentence, create a one hot encoded vector and bag of words vector
-The dog chased the cat, and the cat chased the rat.
-
-Use cases : 
+#### NLP Use Cases
 1. Predict if a comment is toxic or not 
 	- https://www.kaggle.com/code/faressayah/natural-language-processing-nlp-for-beginners
 	- https://www.kaggle.com/competitions/jigsaw-multilingual-toxic-comment-classification
@@ -62,9 +65,32 @@ Use cases :
 5. Identify domain based on text in resume
 6. Classify incoming documents and route to the right team
 
+
+Embedding based approach : Vectors are designed so that words with similar meanings have similar vector representations, capturing semantic and syntactic relationships between words. Does it using neural networks
+
+
+## Generative AI Fundamentals
+
+In a neural network, weights are the learned traits that determine the strength of a connection (or signal) between any two of the neurons that make up the content of the network. (https://blog.metaphysic.ai/weights-in-machine-learning/)
+
+
+
+Parameter can include both model weights as well as hyperparameters
+
+
+
+
+
+Food for thought : Why represent text as vectors? (https://eavelardev.github.io/gcp_courses/nlp_on_gcp/text_representation/one_hot_encoding_and_bag_of_words.html)
+
+
+(https://www.kaggle.com/code/vipulgandhi/bag-of-words-model-for-beginners)
+
+
+
+
 https://medium.com/@ebrahimhaqbhatti516/compilation-of-all-the-text-nlp-competitions-hosted-on-kaggle-17301835f225
 
-Embedding based approach : Vectors are designed so that words with similar meanings have similar vector representations, capturing semantic and syntactic relationships between words
 
 Prompt : the input a user provides to a model to guide it in producing a specific output
 Prompt Engineering : Designing and optimizing prompts to deliver consistent and quality responses for a given application objective and model.
@@ -102,7 +128,7 @@ Structured data : Data follows structure i.e. organized in the form of row and c
 
 Unstructured data : Data which does not follow a predefined structure eg. audio, video, text
 
-Semi structured data : Data which follows some structure, but not as rigid as structured data i.e. does not have the complete structure to fit into RDBMS eg. json, yaml, xml
+
 
 Corpus : Large repository of documents/text
 
